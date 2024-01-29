@@ -2,3 +2,9 @@ langchain
 ctransformers
 sentence-transformers
 faiss-cpu
+llama-cpp-python
+chromadb
+flask
+pandas
+openai
+requests
