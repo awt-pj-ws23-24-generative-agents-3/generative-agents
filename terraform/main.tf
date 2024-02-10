@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-2"
+  region = "us-east-1"
 }
 
 terraform {
@@ -13,13 +13,13 @@ terraform {
 
 resource "aws_key_pair" "deployer" {
   key_name   = "aws"
-  public_key = var.public_key
+  public_key = file("${path.module}/aws.pem.pub")
 }
 
 # Create a security group
-resource "aws_security_group" "my-security-group-csb" {
+resource "aws_security_group" "my-security-group-awt" {
   name   = "my-security-group"
-  vpc_id = "vpc-0ecaaa86c9a76e267"
+  vpc_id = var.vpc_id
 
   # Allow inbound SSH
   ingress {
@@ -46,10 +46,10 @@ resource "aws_security_group" "my-security-group-csb" {
 }
 
 resource "aws_instance" "questions_api" {
-  ami           = "ami-0c758b376a9cf7862" # Debian 12 64-bit (Arm), username: admin
+  ami           = "ami-0f58aa386a2280f35" # Debian 12 64-bit (Arm), username: admin
   instance_type = "t4g.nano"
-  subnet_id     = "subnet-034cd218e2b28c58a"
-  vpc_security_group_ids = [aws_security_group.my-security-group-csb.id]
+  subnet_id     = var.subnet_id
+  vpc_security_group_ids = [aws_security_group.my-security-group-awt.id]
   key_name = aws_key_pair.deployer.key_name
 
   user_data = <<-EOT
