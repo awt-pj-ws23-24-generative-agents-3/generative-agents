@@ -1,0 +1,10 @@
+install
+torch
+torchvision
+numpy
+requests
+sentence-transformers
+faiss-cpu
+huggingface_hub
+langchain
+llama-cpp-python

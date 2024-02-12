@@ -17,7 +17,7 @@ resource "aws_key_pair" "deployer" {
 }
 
 # Create a security group
-resource "aws_security_group" "my-security-group-awt" {
+resource "aws_security_group" "my_security_group_awt" {
   name   = "my-security-group"
   vpc_id = var.vpc_id
 
@@ -49,7 +49,7 @@ resource "aws_instance" "questions_api" {
   ami           = "ami-0f58aa386a2280f35" # Debian 12 64-bit (Arm), username: admin
   instance_type = "t4g.nano"
   subnet_id     = var.subnet_id
-  vpc_security_group_ids = [aws_security_group.my-security-group-awt.id]
+  vpc_security_group_ids = [aws_security_group.my_security_group_awt.id]
   key_name = aws_key_pair.deployer.key_name
 
   user_data = <<-EOT
