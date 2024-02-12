@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-2"
+  region = "eu-central-1"
 }
 
 terraform {
@@ -43,8 +43,8 @@ resource "aws_security_group" "my_security_group_awt_agents" {
 }
 
 resource "aws_instance" "generative_agents" {
-  ami                      = "ami-0e6e78596f3522ace"
-  instance_type            = "p3.2xlarge"
+  ami           = "ami-04bd057ffbd865312" # Debian 12 64-bit (Arm), username: admin
+  instance_type = "t4g.2xlarge"
   subnet_id                = var.subnet_id
   vpc_security_group_ids   = [aws_security_group.my_security_group_awt_agents.id]
   key_name                 = aws_key_pair.deployer.key_name
@@ -74,7 +74,7 @@ resource "terraform_data" "generative_agents_setup" {
 
   connection {
     type        = "ssh"
-    user        = "ec2-user"
+    user        = "admin"
     private_key = file("${path.module}/${aws_key_pair.deployer.key_name}.pem")
     host        = aws_instance.generative_agents.public_ip
   }
@@ -96,7 +96,7 @@ resource "terraform_data" "generative_agents_setup" {
       "sudo systemctl start docker",
       "sudo systemctl enable docker",
       "sudo mkdir -p /app",
-      "sudo chown -R ec2-user:ec2-user /app",
+      "sudo chown -R admin:admin /app",
 
       "sudo docker pull ghcr.io/siar-akbayin/generative-agents:latest",
       "sleep 20",
@@ -104,4 +104,33 @@ resource "terraform_data" "generative_agents_setup" {
       "sudo docker restart generative-agents"
     ]
   }
+}
+
+resource "terraform_data" "retrieve_results" {
+  provisioner "remote-exec" {
+    inline = [
+      "sudo mkdir -p ~/chat-history",
+      "sudo chown $(whoami) ~/chat-history",
+      "sudo chmod 755 ~/chat-history",
+      "container_id=$(sudo docker ps -aqf 'name=generative-agents')",
+      "until sudo docker exec $container_id ls /app/interaction_finished.flag ; do sleep 60; done",
+      "sudo docker exec $container_id sh -c 'tar -cvf - /usr/src/app/chat_history.txt' | tar -xvf - -C ~/chat-history/"
+    ]
+
+    connection {
+      type        = "ssh"
+      user        = "admin"  # SSH user https://alestic.com/2014/01/ec2-ssh-username/
+      private_key = file("${path.module}/${aws_key_pair.deployer.key_name}.pem")
+      host        = aws_instance.generative_agents.public_ip
+    }
+  }
+
+  depends_on = [terraform_data.generative_agents_setup]
+}
+
+resource "terraform_data" "retrieve_chat_history" {
+  provisioner "local-exec" {
+    command    = "mkdir -p ./chat-history && scp -o StrictHostKeyChecking=no -i ${aws_key_pair.deployer.key_name}.pem admin@${aws_instance.generative_agents.public_ip}:'~/chat-history/usr/src/app/*' ./chat-history"
+  }
+  depends_on = [terraform_data.retrieve_results]
 }
