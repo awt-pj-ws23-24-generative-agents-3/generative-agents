@@ -27,7 +27,7 @@ RUN pip install \
 
 # Copy the application source code to the container
 COPY main.py .
-COPY ../data/ data/
+COPY data/ data/
 COPY vectorstore/ vectorstore/
 
 # Command to run the application
