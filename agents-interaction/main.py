@@ -226,10 +226,6 @@ def agent_interaction(question, file_path, encoding_model, index, question_id):
     print(f"{response_from_agent}")
     print(f"Correct Answer: {question['Correct_Answer']}")
 
-    # print(f"{prompt_for_agent}")
-    # print(f"{response_from_agent}")
-    # print(f"The correct answer is: {question['Correct_Answer']}")
-
     print(f"{response_from_agent}")
     print(f"Correct Answer: {question['Correct_Answer']}")
 
