@@ -6,7 +6,12 @@ app = Flask("Questions API")
 # Load and prepare the CSV data
 csv_data = pd.read_csv('mc-dataset.csv')
 csv_data.columns = [col.strip() for col in csv_data.columns]  # rm space from column names
-questions_dict = csv_data.set_index('ID').T.to_dict()
+
+# Convert DataFrame to a list of dictionaries, including the ID
+questions_list = csv_data.to_dict(orient='records')
+
+# Create a dictionary with IDs as keys and question data dictionaries as values
+questions_dict = {question['ID']: question for question in questions_list}
 
 
 @app.route('/questions/<int:question_id>', methods=['GET'])
@@ -20,4 +25,3 @@ def get_question(question_id):
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8000)
-

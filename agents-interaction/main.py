@@ -7,9 +7,9 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.chains import ConversationalRetrievalChain
 from langchain.llms import CTransformers
 from langchain.llms import LlamaCpp
+import fitz
 import numpy as np
 import time
-import sys
 import os
 import torch
 import faiss
@@ -17,19 +17,27 @@ import requests
 import random
 from llama_cpp import Llama
 
-model = SentenceTransformer('sentence-transformers/paraphrase-xlm-r-multilingual-v1')
-
 torch.cuda.empty_cache()
 
-# # Change the model name and store it in a variable
-model_name_or_path = "TheBloke/Llama-2-13B-chat-GGUF"
-model_basename = "llama-2-13b-chat.Q5_K_S.gguf"  # the model is in bin format
 
-# Change the model name and store it in a variable
-# model_name_or_path = "TheBloke/Llama-2-7B-Chat-GGUF"
-# model_basename = "llama-2-7b-chat.Q2_K.gguf"  # the model is in bin format
+# Models for GPU
+# model_name_or_path = "TheBloke/Llama-2-7B-Chat-GGML"
+# model_basename = "llama-2-7b-chat.ggmlv3.q4_0.bin"
+#
+# model_name_or_path = "TheBloke/Llama-2-7B-Chat-GGML"
+# model_basename = "llama-2-7b-chat.ggmlv3.q8_0.bin"
+#
+#
+# model_name_or_path = "TheBloke/Llama-2-13B-chat-GGML"
+# model_basename = "llama-2-13b-chat.ggmlv3.q5_0.bin"
+#
+# model_name_or_path = "TheBloke/Llama-2-13B-chat-GGML"
+# model_basename = "llama-2-13b-chat.ggmlv3.q4_0.bin"
 
-# Change the FAISS index path to use the local file
+# CPU model
+model_name_or_path = "TheBloke/Llama-2-7B-Chat-GGUF"
+model_basename = "llama-2-7b-chat.Q4_K_M.gguf"  # the model is in bin format
+
 DB_FAISS_PATH = "/usr/src/app/vectorstore/db_faiss/faiss.index"
 
 # Download the model using HF-Hub
@@ -43,13 +51,6 @@ lcpp_llm = Llama(
     n_gpu_layers=43,  # Change this value based on your model and your GPU VRAM pool.
     n_ctx=4096,  # Context window
 )
-# lcpp_llm2 = Llama(
-#     model_path=model_path,
-#     n_threads=2,  # CPU cores
-#     n_batch=512,  # Should be between 1 and n_ctx, consider the amount of VRAM in your GPU.
-#     n_gpu_layers=43,  # Change this value based on your model and your GPU VRAM pool.
-#     n_ctx=4096,  # Context window
-# )
 
 # Load the dataset into a pandas DataFrame
 loader = CSVLoader(file_path="/usr/src/app/data/mc-dataset.csv", encoding="utf-8", csv_args={'delimiter': ','})
@@ -82,7 +83,6 @@ def get_embeddings(texts):
 # Change the embedding import to use the langchain version
 embeddings = get_embeddings(text_strings)
 
-
 # Extract the embeddings from the FAISS index
 # docsearch = FAISS.from_documents(text_chunks, embeddings)
 
@@ -100,13 +100,46 @@ index.add(embeddings)  # Add your embeddings to the index
 faiss.write_index(index, DB_FAISS_PATH)
 
 
+# Function to extract text from PDF files
+def extract_text_from_pdf(pdf_folder):
+    texts = []
+    for filename in os.listdir(pdf_folder):
+        if filename.endswith('.pdf'):
+            pdf_path = os.path.join(pdf_folder, filename)
+            with fitz.open(pdf_path) as pdf_doc:
+                text = ""
+                for page in pdf_doc:
+                    text += page.get_text()
+                texts.append(text)
+    return texts
+
+
+pdf_texts = extract_text_from_pdf("/usr/src/app/data/quality-dataset/")
+
+# Get embeddings for the PDF texts
+pdf_embeddings = get_embeddings(pdf_texts)
+
+# Initialize a new Faiss index
+pdf_index = faiss.IndexFlatL2(embeddings.shape[1])
+
+# Convert embeddings to float32 if necessary
+if pdf_embeddings.dtype != np.float32:
+    pdf_embeddings = pdf_embeddings.astype(np.float32)
+
+# Add PDF embeddings to the index
+pdf_index.add(pdf_embeddings)
+
+# Save the PDF Faiss index to disk
+faiss.write_index(pdf_index, "pdf_faiss_index.index")
+
+
 def load_faiss_index(index_path):
     return faiss.read_index(index_path)
 
 
 def fetch_question_from_api(question_id):
     """Fetch a question from the API."""
-    api_url = f'http://3.139.84.244:8000/questions/{question_id}'
+    api_url = f'http://18.222.223.225:8000/questions/{question_id}'
     try:
         response = requests.get(api_url)
         if response.status_code == 200:
@@ -123,15 +156,13 @@ def generate_exam(num_questions):
     """Generate an exam with a specified number of questions."""
     exam = []
     question_ids = random.sample(range(1, 490), num_questions)  # Randomly select question IDs
-
     for q_id in question_ids:
         question = fetch_question_from_api(q_id)
         if question:
             exam.append(question)
         else:
             print(f"Failed to fetch question with ID: {q_id}")
-
-    return exam
+    return exam  # Returns a list of question dictionaries
 
 
 def generate_response(prompt):
@@ -149,34 +180,59 @@ def generate_response(prompt):
     return response["choices"][0]["text"]
 
 
-def agent_interaction(question, file_path, model, index=None):
+def generate_response_pdf(prompt):
+    """Generate a response using the specified agent."""
+    max_tokens_per_segment = 4096  # Maximum number of tokens per segment
+    segments = [prompt[i:i+max_tokens_per_segment] for i in range(0, len(prompt), max_tokens_per_segment)]
+    responses = []
+    for segment in segments:
+        response = lcpp_llm(
+            prompt=segment,
+            max_tokens=1000,
+            temperature=0.5,
+            top_p=0.95,
+            repeat_penalty=1.2,
+            top_k=50,
+            stop=['USER:', 'ASSISTANT:'],
+            echo=True
+        )
+        responses.append(response["choices"][0]["text"])
+    return ' '.join(responses)
+
+
+def agent_interaction(question, file_path, encoding_model, index, question_id):
     """
     Simulate the interaction based on a question object and store the chat history in the specified file.
     If an index is provided, perform a similarity search to assist with answering the question.
     """
     question_text = question['Question']
-    choices_text = f"(A) {question['Choice_A']} (B) {question['Choice_B']} (C) {question['Choice_C']} (D) {question['Choice_D']} (E) {question['Choice_E']}"
+    choices_text = f" {question['Choice_A']}  {question['Choice_B']}  {question['Choice_C']}  {question['Choice_D']}  {question['Choice_E']}"
 
-    prompt_for_agent = f"Question: {question_text} Choices: {choices_text}\nAnswer:"
+    prompt_for_agent = f"Question: {question_text} Choices: {choices_text} + Only one answer is correct. Answer only with the letter of the correct answer. \nAnswer:"
 
     # Perform similarity search if an index is provided
     if index is not None:
-        question_embedding = model.encode([question_text], convert_to_tensor=True).numpy()
-        D, I = index.search(question_embedding, k=1)  # Adjust k based on how many similar items you want to consider
-
-        # Incorporate information from similar items into the prompt
-        similar_item_info = " Based on similar documents, consider focusing on aspects related to the question."
-        prompt_for_agent += similar_item_info
+        question_embedding = encoding_model.encode([question_text], convert_to_tensor=True).cpu().numpy()
+        D, I = index.search(question_embedding, k=1)
 
     response_from_agent = generate_response(prompt_for_agent)
 
     # Save the interaction to the specified chat history file
-    save_chat_history(file_path, f"Question: {question_text}")
-    save_chat_history(file_path, f"Agent's Response: {response_from_agent}")
+    save_chat_history(file_path, f"Question ID: {question_id}")
+    save_chat_history(file_path, f"{response_from_agent}")
     save_chat_history(file_path, f"Correct Answer: {question['Correct_Answer']}")
+    save_chat_history(file_path, f"-" * 60)
 
-    print(f"Agent's Response: {response_from_agent}")
-    print(f"The correct answer is: {question['Correct_Answer']}")
+    print(f"{response_from_agent}")
+    print(f"Correct Answer: {question['Correct_Answer']}")
+
+    # print(f"{prompt_for_agent}")
+    # print(f"{response_from_agent}")
+    # print(f"The correct answer is: {question['Correct_Answer']}")
+
+    print(f"{response_from_agent}")
+    print(f"Correct Answer: {question['Correct_Answer']}")
+
 
 def save_chat_history(file_path, message):
     """Appends a message to the chat history file."""
@@ -184,29 +240,69 @@ def save_chat_history(file_path, message):
         file.write(message + "\n")
 
 
+def save_chat_history_pdf(file_path, messages):
+    """Appends messages to the chat history file."""
+    with open(file_path, "a", encoding="utf-8") as file:
+        for message in messages:
+            file.write(str(message) + "\n")  # Ensure message is converted to string
+
+
 def main():
-    # Define chat history file paths for practice and exam phases
-    practice_chat_history_path = "practice_chat_history.txt"
+    practice_chat_history_path = "01-02-03-practice_chat_history.txt"
     exam_chat_history_path = "exam_chat_history.txt"
+    api_exam_results_path = "01-02-03-04-api_exam_results.txt"
+    pdf_exam_results_path = "01-02-03-pdf_exam_results.txt"
+    quality_chat_history_path = "01-02-quality_conversation.txt"
 
     faiss_index = load_faiss_index(DB_FAISS_PATH)
 
-    # Practice phase
-    print("Starting practice phase...")
-    for practice_question_id in range(1, 6):  # Practice questions IDs, currently low for testing purposes
+    # Practice phase for API questions
+    print("Starting practice phase for API questions...")
+    api_practice_start_time = time.time()
+    for practice_question_id in range(1, 490):  # Assuming these are placeholder values
         question = fetch_question_from_api(practice_question_id)
-        agent_interaction(question, practice_chat_history_path, lcpp_llm, faiss_index)
+        agent_interaction(question, practice_chat_history_path, model, lcpp_llm, None, practice_question_id)
         print(f"Completed practice question ID: {practice_question_id}")
         print("-" * 30)
+    api_practice_end_time = time.time()
+    with open(practice_chat_history_path, "a", encoding="utf-8") as file:
+        file.write(f"Total Practice Phase Time: {api_practice_end_time - api_practice_start_time} seconds\n")
 
-    # Exam phase
-    print("Starting exam phase...")
-    exam_questions = generate_exam(10)  # Generate an exam, currently short for testing purposes
+    # Generate the same exam for both groups
+    exam_questions = generate_exam(25)  # Adjust the number of questions as necessary
+
+    # Exam phase for API questions
+    print("Starting exam phase for API questions...")
+    api_exam_start_time = time.time()
     for question in exam_questions:
-        agent_interaction(question, exam_chat_history_path, lcpp_llm, faiss_index)
-        print("-" * 30)
+        agent_interaction(question, exam_chat_history_path, model, faiss_index, question['ID'])
+    api_exam_end_time = time.time()
+    with open(api_exam_results_path, "a", encoding="utf-8") as file:
+        file.write(f"Total Exam Time: {api_exam_end_time - api_exam_start_time} seconds\n")
 
-    print("Practice and exam phases completed.")
+    # Practice phase for PDF data
+    print("Starting practice phase for PDF data...")
+    pdf_practice_start_time = time.time()
+    for _ in range(30):
+        pdf_text = random.choice(pdf_texts)
+        agent1_prompt = f"Discussion based on PDF content: {pdf_text[:100]}..."  # Shorten for brevity
+        agent1_response = generate_response_pdf(agent1_prompt)
+        save_chat_history_pdf(quality_chat_history_path, [agent1_prompt, agent1_response, "-" * 60])
+    pdf_practice_end_time = time.time()
+    with open(quality_chat_history_path, "a", encoding="utf-8") as file:
+        file.write(f"Total Practice Phase Time for PDF: {pdf_practice_end_time - pdf_practice_start_time} seconds\n")
+
+    # Exam phase for PDF data, using the same exam questions
+    print("Starting exam phase for PDF data...")
+    pdf_exam_start_time = time.time()
+    for question in exam_questions:
+        agent_interaction(question, pdf_exam_results_path, model, pdf_index,
+                          question['ID'])  # Note the use of pdf_index if relevant
+    pdf_exam_end_time = time.time()
+    with open(pdf_exam_results_path, "a", encoding="utf-8") as file:
+        file.write(f"Total Exam Time for PDF: {pdf_exam_end_time - pdf_exam_start_time} seconds\n")
+
+    print("Practice and exam phases for both groups completed.")
 
     while True:
         print("Sleep 5 min")

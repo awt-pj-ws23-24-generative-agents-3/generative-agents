@@ -23,7 +23,8 @@ RUN pip install \
     faiss-cpu \
     huggingface_hub \
     langchain \
-    llama-cpp-python
+    llama-cpp-python \
+    PyMuPDF
 
 # Copy the application source code to the container
 COPY main.py .

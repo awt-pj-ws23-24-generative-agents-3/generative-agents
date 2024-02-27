@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-2"
 }
 
 terraform {
@@ -46,7 +46,7 @@ resource "aws_security_group" "my_security_group_awt" {
 }
 
 resource "aws_instance" "questions_api" {
-  ami           = "ami-0f58aa386a2280f35" # Debian 12 64-bit (Arm), username: admin
+  ami           = "ami-0c758b376a9cf7862" # Debian 12 64-bit (Arm), username: admin
   instance_type = "t4g.nano"
   subnet_id     = var.subnet_id
   vpc_security_group_ids = [aws_security_group.my_security_group_awt.id]
