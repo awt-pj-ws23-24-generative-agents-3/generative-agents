@@ -1,12 +1,7 @@
 from sentence_transformers import SentenceTransformer
 from langchain.document_loaders.csv_loader import CSVLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores.faiss import FAISS
 from huggingface_hub import hf_hub_download
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain.chains import ConversationalRetrievalChain
-from langchain.llms import CTransformers
-from langchain.llms import LlamaCpp
 import fitz
 import numpy as np
 import time
@@ -18,7 +13,6 @@ import random
 from llama_cpp import Llama
 
 torch.cuda.empty_cache()
-
 
 # Models for GPU
 # model_name_or_path = "TheBloke/Llama-2-7B-Chat-GGML"
@@ -82,9 +76,6 @@ def get_embeddings(texts):
 
 # Change the embedding import to use the langchain version
 embeddings = get_embeddings(text_strings)
-
-# Extract the embeddings from the FAISS index
-# docsearch = FAISS.from_documents(text_chunks, embeddings)
 
 # docsearch.save_local(DB_FAISS_PATH)
 dimension = embeddings.shape[1]  # Get the dimensionality of your embeddings
@@ -183,7 +174,7 @@ def generate_response(prompt):
 def generate_response_pdf(prompt):
     """Generate a response using the specified agent."""
     max_tokens_per_segment = 4096  # Maximum number of tokens per segment
-    segments = [prompt[i:i+max_tokens_per_segment] for i in range(0, len(prompt), max_tokens_per_segment)]
+    segments = [prompt[i:i + max_tokens_per_segment] for i in range(0, len(prompt), max_tokens_per_segment)]
     responses = []
     for segment in segments:
         response = lcpp_llm(
@@ -249,7 +240,7 @@ def agent_interaction_PDF(question, file_path, encoding_model, index, question_i
         next_response = generate_response(next_prompt)
         discussion_text = "\n" + next_response
 
-        save_chat_history(file_path, f"Interaction {i+1}: {next_response}")  # Save each interaction
+        save_chat_history(file_path, f"Interaction {i + 1}: {next_response}")  # Save each interaction
 
     # Finalize the discussion
     save_chat_history(file_path, f"Final Discussion for Question ID: {question_id}\n{discussion_text}")
@@ -259,26 +250,18 @@ def agent_interaction_PDF(question, file_path, encoding_model, index, question_i
     print(f"-" * 60)
 
 
-
 def save_chat_history(file_path, message):
     """Appends a message to the chat history file."""
     with open(file_path, "a", encoding="utf-8") as file:
         file.write(message + "\n")
 
 
-def save_chat_history_pdf(file_path, messages):
-    """Appends messages to the chat history file."""
-    with open(file_path, "a", encoding="utf-8") as file:
-        for message in messages:
-            file.write(str(message) + "\n")  # Ensure message is converted to string
-
-
 def main():
-    practice_chat_history_path = "01-02-03-04-05-practice_chat_history.txt"
+    practice_chat_history_path = "practice_chat_history.txt"
     exam_chat_history_path = "exam_chat_history.txt"
-    api_exam_results_path = "01-02-03-04-05-api_exam_results.txt"
-    pdf_exam_results_path = "01-02-03-04-05-pdf_exam_results.txt"
-    quality_chat_history_path = "01-02-04-05-quality_conversation.txt"
+    api_exam_results_path = "api_exam_results.txt"
+    pdf_exam_results_path = "pdf_exam_results.txt"
+    quality_chat_history_path = "quality_conversation.txt"
 
     faiss_index = load_faiss_index(DB_FAISS_PATH)
 
@@ -330,6 +313,7 @@ def main():
 
     print("Practice and exam phases for both groups completed.")
 
+    # Endless loop to keep the container running to get enough time to download the files
     while True:
         print("Sleep 5 min")
         time.sleep(300)
