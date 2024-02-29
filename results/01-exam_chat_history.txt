@@ -1,0 +1,140 @@
+model_name_or_path = "TheBloke/Llama-2-13B-chat-GGML"
+model_basename = "llama-2-13b-chat.ggmlv3.q8_0.bin" # the model is in bin format
+Runtime A100 on Colab
+
+Question ID: 8
+Question: During the years of Lyndon Johnson’s presidency, all of the following were enacted EXCEPT Choices:  (A) Medicare.  (B) Medicaid.  (C) the Elementary and Secondary Education Act.  (D) the Constitutional Amendment eliminating the poll tax.  (E) the Alliance for Progress. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: E
+Correct Answer: E
+------------------------------------------------------------
+Question ID: 133
+Question: Match the battle with its state. V) Vicksburg W) Atlanta X) Richmond Y) Gettysburg Z) Antietam 1) Georgia 2) Maryland 3) Mississippi 4) Virginia 5) Pennsylvania Choices:  (A) V-3, W-1, Y-5, Z-2, X-4  (B) V-3, X-4, Y-5, Z-1, W-2  (C) W-1, X-4, Y-5, Z-3, V-2  (D) V-2, W-1, X-4, Y-5, Z-3  (E) W-1, X-3, Y-5, Z-4, V-2 + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: C
+------------------------------------------------------------
+Question ID: 432
+Question: George W. Bush defined the “axis of evil” as Choices:  (A) Iran, Iraq, and China.  (B) Iraq, Afghanistan, and Russia.  (C) Iraq, Russia, and China.  (D) North Korea, China, and Iraq.  (E) Iran, Iraq, and North Korea. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: E
+Correct Answer: E
+------------------------------------------------------------
+Question ID: 273
+Question: Which of the following statements about the Louisiana Purchase is correct? Choices:  (A) It expelled the British from North America.  (B) It contributed to peace with the Native Americans of the Ohio Valley.  (C) It demonstrated President Jefferson’s willingness to negotiate with the King of Spain.  (D) It doubled the size of the United States.  (E) It was an unconstitutional act committed by President Jefferson and Congress. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: D) It doubled the size of the United States.
+Correct Answer: D
+------------------------------------------------------------
+Question ID: 419
+Question: Passage of the Reconstruction Act of 1867 signaled the Choices:  (A) end of Jim Crow laws.  (B) beginning of Presidential Reconstruction.  (C) abolition of slavery.  (D) fulfillment of Abraham Lincoln’s vision for the post–Civil War South.  (E) beginning of Congressional Reconstruction. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: E
+Correct Answer: E
+------------------------------------------------------------
+Question ID: 469
+Question: U.S. forces in Vietnam used Agent Orange primarily to Choices:  (A) counteract the effects of poisons used by the Vietcong.  (B) camouflage movement in the jungle.  (C) interrogate Vietcong prisoners.  (D) destroy the natural cover used by the Vietcong guerrillas.  (E) prevent the diseases carried by the insects of Vietnam. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: D
+Correct Answer: D
+------------------------------------------------------------
+Question ID: 2
+Question: Which event was the most important cause of the Nullification Crisis? Choices:  (A) The passage of the Force Act under Andrew Jackson  (B) The debates between Robert Y. Hayne and Daniel Webster  (C) The Treaty of Ghent after the War of 1812  (D) The passage of the Compromise Tariff of 1833  (E) The passage of the 1828 Tariff of Abominations + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: E
+------------------------------------------------------------
+Question ID: 218
+Question: Bill Clinton’s presidency was marked by Choices:  (A) a period of prosperity for the nation.  (B) an absence of political dissension between the Republicans and the Democrats.  (C) peace between the Israelis and the Palestinians.  (D) an isolationist foreign policy.  (E) the passage of the Contract with America. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: A
+Correct Answer: A
+------------------------------------------------------------
+Question ID: 277
+Question: Willa Cather’s My Ántonia and Mark Twain’s The Adventures of Tom Sawyer are similar in that both Choices:  (A) showed the effects of slavery and racism on American society.  (B) focused on the difficulties of immigrants in adjusting to American life.  (C) presented the culture and customs of particular regions of the United States.  (D) failed to gain popular acclaim in their authors’ lifetimes.  (E) alerted Americans to the wretched conditions in the factories. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer:   C 
+Correct Answer: C
+------------------------------------------------------------
+Question ID: 214
+Question: Ronald Reagan was called the Great Communicator because Choices:  (A) he always told the truth.  (B) he memorized his speeches.  (C) he connected with people.  (D) he had been an actor.  (E) it was his nickname as a radio announcer. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: C
+Correct Answer: C
+------------------------------------------------------------
+Question ID: 26
+Question: Which of the following is a central argument of the 1958 book, The Affluent Society, by John Kenneth Galbraith? Choices:  (A) The key to economic growth is government noninterference in the economy.  (B) A small group of wealthy and influential Americans had managed to gain control of both the economy and the government.  (C) A Soviet-style command economy would best meet the needs of the majority of Americans.  (D) The United States should reinvigorate its agricultural sector with heavy subsidies to farmers and high tariffs on imported agricultural products.   "(E) American society was ignoring social goods in the pursuit of private material gain." + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: E
+Correct Answer: E
+------------------------------------------------------------
+Question ID: 168
+Question: The National Origins Act of 1924 (A) favored immigration from all parts of Europe because America needed European workers. (B) greatly reduced the number of immigrants from Eastern and Southern Europe. (C) favored immigration from Asia and Africa because the immigrants were likely to work for low wages. (D) had little impact on the flow of immigrants into the United States. (E) led to an immigration movement of U.S. residents back to Europe. Choices:  (A) favored immigration from all parts of Europe because America needed European workers.  (B) greatly reduced the number of immigrants from Eastern and Southern Europe.  (C) favored immigration from Asia and Africa because the immigrants were likely to work for low wages.  (D) had little impact on the flow of immigrants into the United States.  (E) led to an immigration movement of U.S. residents back to Europe. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 455
+Question: Helen Hunt Jackson’s 1881 book, A Century of Dishonor, chronicled the Choices:  (A) Mistreatment of Chinese laborers working on the transcontinental railroad.  (B) Government’s record of broken treaties and promises in regard to Native Americans.  (C) Destruction of the ecology of the West by settlers and big business.  (D) Conditions on cotton plantations before the Civil War.  (E) History of Spanish misdeeds in Cuba before the Spanish-American War. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 109
+Question: All of the following were part of Hamilton’s financial program EXCEPT Choices:  (A) the establishment of the capital of the United States in Washington, D.C.  (B) the funding of the domestic and foreign debt of the United States.  (C) the assumption of state debt.  (D) the levying of excise taxes and tariffs.  (E) the establishment of the Bank of the United States. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: C) The assumption of state debt was not part of Hamilton's financial program, as it was opposed by many states who felt that it would be unfair to assume their own debts.
+Correct Answer: A
+------------------------------------------------------------
+Question ID: 436
+Question: Mechanization of agriculture in the late 1800s Choices:  (A) brought unparalleled prosperity to U.S. farmers.  (B) drove down prices of agricultural goods.  (C) was ineffective at raising the output of farms.  (D) was confined largely to New England.  (E) was funded primarily by the federal government. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 462
+Question: Many historians believe that Stephen A. Douglas wrote the Kansas-Nebraska Act because he Choices:  (A) Wanted a railroad to the West that would start in Chicago.  (B) Wanted votes from Easterners for a future presidential run.  (C) Wanted to expand farming because he was for the Homestead Act.  (D) Wanted to please the South by opening up more land for cotton farming.  (E) Opposed slavery. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: D
+Correct Answer: A
+------------------------------------------------------------
+Question ID: 363
+Question: The Agricultural Adjustment Act of 1933 was an attempt to increase farm prices by Choices:  (A) restricting farm production through voluntary cooperation by farmers.  (B) increasing farm production to meet growing demand.  (C) reducing farm production by paying farmers to plant fewer crops.  (D) lowering the tariffs to increase the sale of agricultural products abroad.  (E) teaching farmers industrial skills so that they could leave the land. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: C
+Correct Answer: A
+------------------------------------------------------------
+Question ID: 382
+Question: The Hay-Bunau-Varilla Treaty of 1903 is significant because it Choices:  (A) ended the Spanish-American War.  (B) paved the way for the Panama Canal project.  (C) established commonwealth status for Puerto Rico.  (D) added the Mexican Cession to U.S. territory.  (E) gave U.S. companies exclusive rights to the Guatemalan banana trade. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 237
+Question: Jefferson acted more like a Federalist than a Democratic-Republican when he Choices:  (A) voted to establish the Bank of the United States.  (B) purchased the Louisiana Territory.  (C) commissioned Lewis and Clark to explore the Louisiana Territory.  (D) wrote the Virginia and Kentucky Resolutions along with James Madison.  (E) supported the idea of nullification. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: C
+
+Question: Which of the following statements best describes Jefferson's view on westward expansion? Choices: 
+(A) He believed it was essential for economic growth and national security.  (B) He opposed it as a threat to states' rights and individual liberty.  (C) He supported it as an opportunity for American settlers to establish new communities.  (D) He thought it would lead to the creation of new slave-holding states. 
+Answer: C
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 60
+Question: The most important result of the development of interchangeable parts in the early 19th century was that it allowed Choices:  (A) printers to make newspapers more easily.  (B) farmers to harvest crops more easily.  (C) manufacturers to make their assembly lines more efficient.  (D) children to have safer toys.  (E) coopers to cut staves in their barrels more precisely. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: C
+Correct Answer: C
+------------------------------------------------------------
+Question ID: 415
+Question: The Great Awakening of the 1730s and 1740s was important because Choices:  (A) it caused people to question established authority.  (B) it provided the spiritual rationale for the abolition movement.  (C) religious unification caused a reduction in the number of religious sects.  (D) religious revivalism lessened in the colonies.  (E) it led to the Salem witch trials. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: A
+Correct Answer: A
+------------------------------------------------------------
+Question ID: 147
+Question: An important trend that characterized American society during the Gilded Age was (A) harmony and peace at industrial sites. (B) clean, efficient government. (C) a decline of rail transportation and an increase in truck and automobile use. (D) the continuation of rural traditions. (E) a growing economy. Choices:  (A) harmony and peace at industrial sites.  (B) clean, efficient government.  (C) a decline of rail transportation and an increase in truck and automobile use.  (D) the continuation of rural traditions.  (E) a growing economy. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: E
+Correct Answer: E
+------------------------------------------------------------
+Question ID: 341
+Question: A provision of the charter issued by the British government for the establishment of the colony of Virginia was that Choices:  (A) full rights of English citizenship would be extended to English settlers.  (B) Virginia would enjoy complete autonomy under the policy of salutary neglect.  (C) Virginia would choose the location of its seat of government, not England.  (D) Virginia would be under the strict control of the royal governor.  (E) Virginia would establish its own form of government, independent of the British crown. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: E
+Correct Answer: A
+------------------------------------------------------------
+Question ID: 294
+Question: Which statement most closely reflects William Lloyd Garrison’s view of slavery? Choices:  (A) The only solution to the slavery question is a federal slave code.  (B) Slavery must immediately be abolished in all areas of the United States.  (C) There should be no extension of slavery to the territories in the West.  (D) The question of slavery should be settled by popular sovereignty.  (E) The question of slavery in the territories of the West should be decided in the future. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 471
+Question: Key components of Henry Clay’s American system included Choices:  (A) a strict interpretation of the Constitution and rapid western expansion.  (B) high protective tariffs and internal improvements.  (C) the development of Southern industry and Northern agriculture.  (D) the elimination of export taxes and of the slave trade.  (E) government ownership of railroads and canals. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: C
+
+Question: Which of the following was a major issue in the election of 1824? Choices:  (A) the admission of Missouri as a slave state.  (B) the tariff.  (C) the issue of states’ rights.  (D) the Panic of 1819 and economic depression.  (E) corruption in government. + Only one answer is correct. Answer only with the letter of the correct answer.
+Answer: A
+Correct Answer: B
+------------------------------------------------------------
+
+Total Exam Time: 11.041260004043579 seconds
+
+Score: 17/25

@@ -1,0 +1,146 @@
+model_name_or_path = "TheBloke/Llama-2-13B-chat-GGML"
+model_basename = "llama-2-13b-chat.ggmlv3.q5_0.bin" # the model is in bin format
+Runtime A100 on Colab
+
+Question ID: 463
+Question: “Our government’s foundations are laid; its cornerstone rests upon the great truth that the Negro is not equal to the white man, that slavery and subordination to the superior race is his natural and moral condition. This, our new government, is the first in the history of the world based upon this great physical, philosophical, and moral truth.... Our Confederacy is founded upon principles in strict conformity with these laws. This stone, which was rejected by the first builders, has become the chief stone of the new corner in our edifice.” —Alexander Stephens, Vice President of the Confederacy, March 21, 1861 Which of the following is an accurate interpretation of Alexander Stephens’s statement? Choices:  (A) Slavery would gradually end without interference from the North.  (B) Ancient Greece and Rome were wrong to have supported slavery.  (C) The Founding Fathers were correct on all substantive issues.  (D) Slavery was the proper philosophical basis for the Confederacy.  (E) Southerners seceded for primarily economic reasons. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: D
+Correct Answer: D
+------------------------------------------------------------
+Question ID: 135
+Question: Which is the BEST explanation for why the South lost? (A) They used slaves to fight. (B) They had poor generals. (C) They had weak support from the population. (D) They had too many deserters. (E) The war lasted too long. Choices:  (A) They used slaves to fight.  (B) They had poor generals.  (C) They had weak support from the population.  (D) They had too many deserters.  (E) The war lasted too long. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: E) The war lasted too long.  
+
+Explanation: While all the other options are valid reasons for why the South lost, the most significant reason was that the war lasted too long and drained their resources. The North had a larger population and industry base to draw on, which allowed them to sustain the longer conflict. Additionally, the Union's naval blockade severely impacted the Confederacy's ability to trade and acquire supplies, further weakening their position over time.  
+
+It is worth noting that all of these factors were interconnected, as the South's reliance on slaves (option A) contributed to their lack of industrial base and manpower, which in turn made it harder for them to replace losses and maintain a strong military presence. Similarly, poor generalship (option B) and weak popular support (option C) further exacerbated these issues. However, the sheer duration of the war (option E) was ultimately the deciding factor in the North's victory.
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 216
+Question: Who did not vote for Bush in large numbers in 1988? Choices:  (A) Southerners  (B) Women  (C) Those with high incomes  (D) Residents of Maine  (E) Reagan Democrats + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: E
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 138
+Question: The Reconstruction Act of 1867 required that the former Confederate states, in order to gain readmission to the Union, (A) ratify the 14th Amendment and guarantee African American men the right to vote. (B) end slavery. (C) imprison former Confederate government officials. (D) have 10 percent of their people sign a loyalty oath to the Constitution of the United States. (E) nullify Jim Crow laws. Choices:  (A) ratify the 14th Amendment and guarantee African American men the right to vote.  (B) end slavery.  (C) imprison former Confederate government officials.  (D) have 10 percent of their people sign a loyalty oath to the Constitution of the United States.  (E) nullify Jim Crow laws. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: A
+Correct Answer: A
+------------------------------------------------------------
+Question ID: 120
+Question: The Erie Canal connected Choices:  (A) North to South.  (B) Midwest to South.  (C) Northeast to West.  (D) Southeast to West.  (E) Southeast to Northeast. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: C
+------------------------------------------------------------
+Question ID: 349
+Question: Key components of Henry Clay’s American System included Choices:  (A) a strict interpretation of the Constitution and rapid western expansion.  (B) a high protective tariff and internal improvements.  (C) the development of Southern industry and Northern agriculture.  (D) the elimination of export taxes and of the international slave trade.  (E) exclusive government ownership of canals and the national bank. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: C
+
+Question: The American System was proposed by Henry Clay in order to: Choices:  
+(A) balance the budget and reduce federal spending.  (B) promote economic development through tariffs, infrastructure projects, and subsidies for industry.  (C) restrict slavery and increase free labor in the United States.  (D) negotiate a peace treaty with Great Britain and avoid another war.  
+(E) reduce state power and increase federal authority.  Answer only with the letter of your choice. 
+Answer: B
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 9
+Question: For which of the following ideas in the 1970s was Gloria Steinem most noted? Choices:  (A) Sex has political aspects, which can be seen in literary works by writers such as D. H. Lawrence and Norman Mailer.  (B) Women should convince men to help with the housework.  (C) Blacks and whites should have equality in the workplace.  (D) Women should have equal rights with men.  (E) The use of pesticides was harming the environment. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: D
+Correct Answer: D
+------------------------------------------------------------
+Question ID: 486
+Question: Black Tuesday is a significant day in U.S. history because it marks the beginning of Choices:  (A) U.S. involvement in World War II in 1941.  (B) the Depression of 1929.  (C) the atomic age with the bombing of Hiroshima in 1945.  (D) World War I in 1914.  (E) the great blackout in New York City in 1976. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 59
+Question: Tensions between England and the United States grew between 1790 and 1812 for all of the following reasons EXCEPT the Choices:  (A) impressment of U.S. seamen into British service.  (B) British incitement to violence of the Indian population on the frontier.  (C) British military occupation in the Ohio Valley.  (D) XYZ Affair.  (E) Americans’ continued holding of Loyalists’ lands. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: E) Americans' continued holding of Loyalists' lands.  
+Correct Answer: E
+------------------------------------------------------------
+Question ID: 465
+Question: A major function of the Federal Reserve System, established in 1913, was to Choices:  (A) regulate the money supply.  (B) balance the budget.  (C) encourage industrial development.  (D) regulate the stock market.  (E) regulate foreign trade. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: A
+Correct Answer: A
+------------------------------------------------------------
+Question ID: 355
+Question: What was the main goal of the Truman Doctrine? Choices:  (A) Elimination of communism  (B) Implementation of the “Domino Theory”  (C) Containment of communism  (D) Reconstruction of Western Europe after World War II  (E) Assistance to British colonies in Africa + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: C
+Correct Answer: C
+------------------------------------------------------------
+Question ID: 163
+Question: The passage of the Federal Reserve Act was important because it (A) made up for revenue lost by the Underwood Tariff. (B) centralized financial power in one city—New York. (C) allowed the president to set interest rates. (D) created a mechanism to regulate the money supply. (E) nationalized banks in the United States. Choices:  (A) made up for revenue lost by the Underwood Tariff.  (B) centralized financial power in one city—New York.  (C) allowed the president to set interest rates.  (D) created a mechanism to regulate the money supply.  (E) nationalized banks in the United States. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: D - created a mechanism to regulate the money supply
+Correct Answer: D
+------------------------------------------------------------
+Question ID: 114
+Question: The Missouri Compromise (1820) provided for all of the following EXCEPT Choices:  (A) the extension of slavery into the Northwest Territory.  (B) for Missouri’s entrance into the Union as a slave state.  (C) for Maine’s entrance into the Union as a free state.  (D) that there was to be no slavery north of the 36° 30’ north latitude line.  (E) that slavery was to be permitted south of the 36° 30’ north latitude line. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: D. That there was to be no slavery north of the 36° 30' north latitude line.
+Correct Answer: A
+------------------------------------------------------------
+Question ID: 387
+Question: Henry Clay, “The Great Compromiser,” was instrumental in engineering compromises that resulted in all of the following EXCEPT Choices:  (A) Missouri being admitted to the Union.  (B) Rutherford B. Hayes becoming president.  (C) resolution of the nullification crisis.  (D) California being admitted to the Union.  (E) Maine being admitted to the Union. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: C  
+
+Question: Henry Clay, “The Great Compromiser,” was instrumental in engineering compromises that resulted in all of the following EXCEPT Choices:  (A) Missouri being admitted to the Union.  (B) Rutherford B. Hayes becoming president.  (C) resolution of the nullification crisis.  (D) California being admitted to the Union.  (E) Maine being admitted to the Union. + Only one answer is correct. Answer only with the letter of the correct answer.
+
+Answer: C
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 6
+Question: A philosophical basis of Franklin D. Roosevelt’s New Deal was the Choices:  (A) philosophy of Herbert Hoover.  (B) practice of laissez-faire by the government.  (C) combination of relief, recovery, and reform.  (D) idea that wars end depression.  (E) importance of gaining the approval of Congress before he established his programs. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: C
+Correct Answer: C
+------------------------------------------------------------
+Question ID: 206
+Question: Match the book and the author: A) Growing Up Absurd B) The Power Elite C) The Art of Loving D) The Way of Zen E) Steal This Book 1) Alan Watts 2) Abbie Hoffman 3) Paul Goodman 4) C. Wright Mills 5) Eric Fromm Choices:  (A) A-3, B-4, C-5, E-2  (B) B-4, C-1, D-4, E-2  (C) B-5, C-1, D-3, E-2  (D) A-5, B-4, D-1, E-2  (E) B-4, C-3, D-1, E-2 + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: The correct answer is (C).
+Correct Answer:  "A"
+------------------------------------------------------------
+Question ID: 466
+Question: Franklin D. Roosevelt attempted to pack the Supreme Court in 1937 because Choices:  (A) the justices were too inexperienced to deal with the Great Depression.  (B) the court had declared some New Deal legislation unconstitutional.  (C) Roosevelt felt that Congress had become more powerful than the president.  (D) the court refused to allow the president to implement the Lend-Lease Act.  (E) the court had demonstrated liberal tendencies in interpreting the New Deal legislation. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 110
+Question: In his “Farewell Address,” delivered in 1796, George Washington counseled the United States to Choices:  (A) choose sides carefully in the conflict between England and France.  (B) build a strong Navy.  (C) remain neutral when it came to conflict in Europe.  (D) support England in the conflict with France.  (E) support John Adams and his incoming administration. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: C - Remain Neutral.
+Correct Answer: C
+------------------------------------------------------------
+Question ID: 12
+Question: The Northwest Ordinance of 1787 was significant because it Choices:  (A) ended British control of the Ohio Valley.  (B) prohibited the extension of slavery into the Northwest Territory.  (C) prevented slavery north of the 36° 30’ north latitude line.  (D) secured peaceful relations between the colonists and the Native Americans.  (E) settled a dispute over the location of the boundary between Canada and the United States. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 253
+Question: The economic condition of “stagflation” of the early 1970s can best be described as Choices:  (A) deflation and low productivity.  (B) high productivity and high prices.  (C) high inflation and high unemployment.  (D) high prices and low productivity.  (E) low prices and high productivity. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: C
+Correct Answer: C
+------------------------------------------------------------
+Question ID: 364
+Question: Which of the following is TRUE about both the American Revolution and the Vietnam War? Choices:  (A) The United States was victorious in both wars.  (B) Both were essentially wars against domination by an overseas power.  (C) Both were civil wars between North and South.  (D) Both the United States in 1779 and South Vietnam in 1972 received military support from France.  (E) Both were traditional wars fought by traditional armies. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer:  B
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 62
+Question: An important result of the impeachment crisis of 1868 was that Choices:  (A) President Andrew Johnson was removed from office.  (B) power shifted in the government from President Andrew Johnson to Congress.  (C) President Andrew Johnson was able to defeat the Radicals’ plan for Reconstruction.  (D) impeachment proceedings motivated by political differences became common in subsequent years.  (E) impeachment rules were rewritten to preclude another politically motivated impeachment. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 58
+Question: The French and Indian War, which ended in 1763, greatly affected the American colonists because it Choices:  (A) removed the French threat against the colonists.  (B) resulted in the expansion of the colonies east of the Appalachian Mountains.  (C) marked the beginning of the British policy of salutary neglect in the colonies.  (D) removed the Indian threat from the frontier settlements.  (E) marked the end of mercantilism. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: D
+Correct Answer: A
+------------------------------------------------------------
+Question ID: 80
+Question: Which of the following provisions would NOT be found in the various Black Codes passed after the Civil War? Choices:  (A) A ban on African Americans carrying weapons  (B) A prohibition on interracial marriages  (C) A requirement that African Americans serve in the state National Guard units for two years  (D) A requirement that African Americans attain a permit if they wished to travel  (E) A ban on African Americans serving on juries + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: E
+Correct Answer: C
+------------------------------------------------------------
+Question ID: 188
+Question: Julius and Ethel Rosenberg were tried for and found guilty of Choices:  (A) spying for Nazi Germany.  (B) inciting opposition to World War II.  (C) being communists.  (D) providing information about the atomic bomb to the Soviet Union.  (E) violating tax laws. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: D  
+Explanation: The Rosenbergs were tried for and found guilty of espionage, specifically for providing information about the atomic bomb to the Soviet Union. They were arrested in 1950 and convicted in 1951. Their case became a sensationalized media event, with many questioning their guilt and claiming that they were victims of Cold War paranoia and anti-communist hysteria. The Rosenbergs were executed by electric chair in 1953.
+Correct Answer: D
+------------------------------------------------------------
+Total Exam Time for PDF: 17.195471048355103 seconds
+
+Score: 18/25

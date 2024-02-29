@@ -1,0 +1,133 @@
+model_name_or_path = "TheBloke/Llama-2-7B-Chat-GGML"
+model_basename = "llama-2-7b-chat.ggmlv3.q8_0.bin" # the model is in bin format
+Runtime A100 on Colab
+
+Question ID: 290
+Question: Because of his belief that the New Deal had not accomplished its goals, Francis Townsend proposed a plan to Choices:  (A) use nonviolent civil disobedience to oppose racial segregation.  (B) send aid to antifascist groups in Europe.  (C) force all “subversive” groups to register with the government.  (D) ban women from working outside the home until all able-bodied men had work.  (E) provide a monthly stipend to everyone in the United States over 60 years old. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: E
+Correct Answer: E
+------------------------------------------------------------
+Question ID: 371
+Question: The Dawes Severalty Act of 1887 was passed by Congress in response to pressure from Choices:  (A) large mining interests, which wanted to exploit Native American reservation lands.  (B) Native Americans, who thought the plan for gradual assimilation offered their best hope for survival.  (C) the U.S. military, which was seeking revenge for “Custer’s Last Stand.”  (D) reform-minded whites trying to solve the “Indian problem” by promoting Native Americans’s assimilation.  (E) buffalo hunters, who wanted unlimited access to buffalo herds. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: D
+Correct Answer: D
+------------------------------------------------------------
+Question ID: 295
+Question: In the Dred Scott case of 1857, the Supreme Court included which idea as part of its decision? Choices:  (A) Separate but equal facilities are constitutional.  (B) An African American had no rights a white man was bound to respect.  (C) The state of Georgia has no jurisdiction over the Cherokee, which is a separate nation.  (D) Interstate commerce is not within the jurisdiction of the states but of the federal government.  (E) Separate but equal facilities are inherently unconstitutional. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: (A) Separate but equal facilities are constitutional.
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 98
+Question: The Middle Passage referred to the Choices:  (A) crossing of the Atlantic by the Pilgrims.  (B) conversion of people to the “elect” of the Puritan faith.  (C) journey of African slaves from West Africa to the New World.  (D) journey to heaven after death.  (E) transporting of rum across the Atlantic Ocean to Africa as part of Triangular Trade. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: (C) journey of African slaves from West Africa to the New World.
+Correct Answer: C
+------------------------------------------------------------
+Question ID: 192
+Question: Which of the following is associated with the Kennedy administration? Choices:  (A) Medicare  (B) Medicaid  (C) Alliance for Progress  (D) The 24th Amendment  (E) The ESEA + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: (B) Medicaid
+Correct Answer: C
+------------------------------------------------------------
+Question ID: 370
+Question: During Presidential Reconstruction, congressional Republicans opposed Andrew Johnson’s policy of Choices:  (A) letting former members of the Confederacy run the new postwar state governments.  (B) guaranteeing suffrage to African Americans.  (C) requiring each former Confederate state to ratify the 14th Amendment.  (D) banning former members of the Confederacy from voting and holding office.  (E) granting each freedman 40 acres and a mule. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: C) requiring each former Confederate state to ratify the 14th Amendment.
+Correct Answer: A
+------------------------------------------------------------
+Question ID: 262
+Question: The Weathermen, who were in the news in the 1960s and early 1970s, were Choices:  (A) radical black nationalists who believed in power to the black people.  (B) radical terrorists who opposed the Vietnam War.  (C) environmental activists who opposed the pollution caused by automobiles.  (D) a rock-and-roll group who were precursors to punk rock and heavy metal groups.  (E) a commune that called for love and peace and living in the outdoors. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 266
+Question: President Lincoln’s ideas about Reconstruction were based on the theory that the Confederate states Choices:  (A) should be treated as conquered territories.  (B) could be admitted to the Union only by Congress.  (C) had never actually left the Union.  (D) must grant full equality to all people.  (E) should be barred indefinitely from being part of the United States. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: D
+Correct Answer: C
+------------------------------------------------------------
+Question ID: 21
+Question: The implied powers clause of the U.S. Constitution was used to justify the Choices:  (A) suppression of the Whiskey Rebellion in 1794.  (B) addition of the Bill of Rights to the Constitution in 1791.  (C) signing of Jay’s Treaty with England in 1794.   "(D) passage of the Judiciary Act of 1789."  (E) establishment of the Bank of the United States in 1791. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: (A) suppression of the Whiskey Rebellion in 1794.
+Correct Answer: E
+------------------------------------------------------------
+Question ID: 25
+Question: The use of the atomic bomb by the United States in 1945 was significant in that it Choices:  (A) hastened the end of World War II.  (B) caused the defeat of Harry Truman in the election of 1948.   "(C) led to the formation of the United Nations."  (D) ushered in the computer age.   "(E) was the direct cause of the Cold War." + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: E) was the direct cause of the Cold War.
+Correct Answer: A
+------------------------------------------------------------
+Question ID: 152
+Question: The term spoilsmen is most appropriately applied to (A) politicians who supported civil service reform. (B) miners who destroyed important natural areas. (C) generals who profited off of America’s victory in the Spanish-American War. (D) urban “bosses” who received kickbacks from contracts between the government and private firms. (E) party loyalists who expected jobs in exchange for their political work. Choices:  (A) politicians who supported civil service reform.  (B) miners who destroyed important natural areas.  (C) generals who profited off of America’s victory in the Spanish-American War.  (D) urban “bosses” who received kickbacks from contracts between the government and private firms.  (E) party loyalists who expected jobs in exchange for their political work. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: D
+Correct Answer: E
+------------------------------------------------------------
+Question ID: 470
+Question: One of the major reasons for the development of political parties in the 1790s was that Choices:  (A) Jefferson and Madison had developed a personal dislike for one another.  (B) support for the French Revolution eroded Washington’s power.  (C) the Alien and Sedition Acts had reduced the number of immigrants entering the United States.  (D) differences had developed concerning the interpretation of the Constitution.  (E) The Articles of Confederation had created a weak central government. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: (D) differences had developed concerning the interpretation of the Constitution.
+Correct Answer: D
+------------------------------------------------------------
+Question ID: 255
+Question: A provision of the charter issued by the British government for the establishment of the colony of Virginia was that Choices:  (A) full rights of English citizenship would be extended to English settlers.  (B) Virginia would enjoy complete autonomy under the policy of salutary neglect.  (C) Virginia would choose the location of its seat of government, not England.  (D) Virginia would be under the strict control of the royal governor.  (E) Virginia would establish its own form of government, independent of the British crown. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: E
+Correct Answer: A
+------------------------------------------------------------
+Question ID: 235
+Question: Slavery and indentured servitude in colonial America differed in that most indentured servants Choices:  (A) were promised great financial compensation for their service.  (B) were coerced into service.  (C) received land after completion of their terms of indenture.  (D) came voluntarily.  (E) were considered members of their master’s family. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: D
+------------------------------------------------------------
+Question ID: 485
+Question: Among the key components of President Theodore Roosevelt’s “Square Deal” program were Choices:  (A) a national bank and internal improvements.  (B) unemployment insurance and relief for poor families.  (C) opposition to U.S. imperialism and autonomy for Latin American nations.  (D) regulation of trusts and consumer protection.  (E) racial integration in public facilities and voting rights for African Americans. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer:
+(C) opposition to U.S. imperialism and autonomy for Latin American nations.
+Correct Answer: D
+------------------------------------------------------------
+Question ID: 419
+Question: Passage of the Reconstruction Act of 1867 signaled the Choices:  (A) end of Jim Crow laws.  (B) beginning of Presidential Reconstruction.  (C) abolition of slavery.  (D) fulfillment of Abraham Lincoln’s vision for the post–Civil War South.  (E) beginning of Congressional Reconstruction. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: E
+Correct Answer: E
+------------------------------------------------------------
+Question ID: 280
+Question: Which of the following is TRUE about both the American Revolution and the Vietnam War? Choices:  (A) The United States was victorious in both wars.  (B) Both were essentially wars against domination by an overseas power.  (C) Both were civil wars between North and South.  (D) Both the United States in 1779 and South Vietnam in 1972 received military support from France.  (E) Both were traditional wars fought by traditional armies. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: The correct answer is (B).
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 150
+Question: Pick the answer that matches the person with the idea or movement he or she is associated with. X) Charles Graham Sumner Y) Jane Addams Z) Andrew Carnegie 1) the gospel of wealth 2) social Darwinism 3) pragmatism 4) the settlement house movement Answer choices: (A) X-1; Y-2; Z-3 (B) X-2; Y-3; Z-4 (C) X-2; Y-4; Z-1 (D) X-3; Y-4; Z-1 (E) X-3; Y-1; Z-2 Choices:  (A) X-1; Y-2; Z-3  (B) X-2; Y-3; Z-4  (C) X-2; Y-4; Z-1  (D) X-3; Y-4; Z-1  (E) X-3; Y-1; Z-2 + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: (A) Charles Graham Sumner
+Correct Answer: C
+------------------------------------------------------------
+Question ID: 325
+Question: In the Plessy v. Ferguson decision of 1896, the Supreme Court Choices:  (A) declared that poll taxes and literacy tests were unconstitutional.  (B) declared that segregation of the races was acceptable.  (C) struck down many aspects of Congressional Reconstruction.  (D) ended segregation in public schools on the grounds that it was inherently unfair.  (E) ruled that slaves were still considered property, even if they resided in a free state or territory. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: B
+------------------------------------------------------------
+Question ID: 204
+Question: Which was the most important reason for the early growth of Students for a Democratic Society (SDS) and the Free Speech Movement (FSM)? Choices:  (A) Drugs  (B) Government lies  (C) The high divorce rate  (D) Optimism caused by the postwar boom  (E) The nuclear threat + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: (B) Government lies
+Correct Answer: D
+------------------------------------------------------------
+Question ID: 244
+Question: President Clinton’s position on gun control and law enforcement was reflected in his Choices:  (A) support for the Contract with America.  (B) appointment of Sandra Day O’Connor to the Supreme Court.  (C) approval of the Dayton Accords.  (D) signing of the Brady Bill.  (E) support from the National Rifle Association. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: D
+Correct Answer: D
+------------------------------------------------------------
+Question ID: 428
+Question: “Sod busters” was a nickname given to Choices:  (A) New England settlers in the 1600s.  (B) cotton growers in Texas in the 1840s and 1850s.  (C) frontier farmers on the Great Plains in the 1860s and 1870s.  (D) Dust Bowl farmers in the 1930s.  (E) Eastern farmers who were displaced by suburban development in the 1950s. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: C
+------------------------------------------------------------
+Question ID: 52
+Question: President Andrew Johnson’s Reconstruction plan called for the former Confederate states to Choices:  (A) pass the Civil Rights Act.  (B) support the Freedman’s Bureau.  (C) endorse the 13th Amendment, which abolished slavery.  (D) arrest all the men who served in the Confederate government.  (E) guarantee that the freedmen would attain the right to vote. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: C
+Correct Answer: C
+------------------------------------------------------------
+Question ID: 2
+Question: Which event was the most important cause of the Nullification Crisis? Choices:  (A) The passage of the Force Act under Andrew Jackson  (B) The debates between Robert Y. Hayne and Daniel Webster  (C) The Treaty of Ghent after the War of 1812  (D) The passage of the Compromise Tariff of 1833  (E) The passage of the 1828 Tariff of Abominations + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: (A) The passage of the Force Act under Andrew Jackson
+Correct Answer: E
+------------------------------------------------------------
+Question ID: 65
+Question: After World War II, NATO was formed primarily to Choices:  (A) assist emerging nations in Asia.  (B) stop the spread of Communism in Europe.  (C) promote democratic reforms in Latin America.  (D) provide economic aid to war-torn nations in Europe.  (E) halt the growth of fascism in southern Africa. + Only one answer is correct. Answer only with the letter of the correct answer. 
+Answer: B
+Correct Answer: B
+------------------------------------------------------------
+Total Exam Time for PDF: 5.699093818664551 seconds
+
+Score: 11/25
