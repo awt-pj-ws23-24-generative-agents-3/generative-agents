@@ -60,3 +60,7 @@ First follow the instructions in the README.md file in the api/terraform folder.
 of the README.md file in the agents-interaction/terraform folder. Do not forget to update the API URL and to use your own 
 container registry in the main.tf file with the image that uses the API URL.
 
+
+## Try on Google Colab
+
+You can also try it directly on Google Colab: https://colab.research.google.com/drive/1052Fr2AMu_jop2oRTD44DLBqPg1HKGkW?usp=sharing
