@@ -1,5 +1,5 @@
 This Terraform configuration sets up an EC2 instance on AWS with a security group that allows inbound SSH access. On this
-instance, a Docker container is pulled and run which runs the Python script that generates the agents, runus the practice 
+instance, a Docker container is pulled and run which runs the Python script that generates the agents, runs the practice 
 phase and the exam phase and stores the results in different text files. They are then copied from the container to the instance
 and afterward the Terraform script stores them locally. 
 
