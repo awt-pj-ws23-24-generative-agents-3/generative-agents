@@ -130,7 +130,7 @@ if pdf_embeddings.dtype != np.float32:
 pdf_index.add(pdf_embeddings)
 
 # Save the PDF Faiss index to disk
-faiss.write_index(pdf_index, "pdf_faiss_index.index")
+faiss.write_index(pdf_index, "/usr/src/app/vectorstore/db_faiss/pdf_faiss_index.index")
 
 
 def load_faiss_index(index_path):
@@ -225,9 +225,39 @@ def agent_interaction(question, file_path, encoding_model, index, question_id):
 
     print(f"{response_from_agent}")
     print(f"Correct Answer: {question['Correct_Answer']}")
+    print(f"-" * 60)
 
-    print(f"{response_from_agent}")
-    print(f"Correct Answer: {question['Correct_Answer']}")
+
+def agent_interaction_PDF(question, file_path, encoding_model, index, question_id):
+    question_text = question['Question']
+    choices_text = f" {question['Choice_A']}  {question['Choice_B']}  {question['Choice_C']}  {question['Choice_D']}  {question['Choice_E']}"
+
+    initial_prompt = f"Question: {question_text} Choices: {choices_text}. Only one answer is correct. Explain your answer and start a discussion about the topic of the question."
+
+    # Perform the initial similarity search and response generation as before
+    question_embedding = encoding_model.encode([question_text])
+    question_embedding = np.array(question_embedding).astype(np.float32)
+    D, I = index.search(question_embedding, 1)
+
+    initial_response = generate_response(initial_prompt)
+
+    discussion_text = initial_response
+
+    # Loop for 5 interactions, alternating the role of asking and answering based on the initial response
+    for i in range(5):
+        next_prompt = f"{discussion_text}\nContinue the discussion:"
+        next_response = generate_response(next_prompt)
+        discussion_text = "\n" + next_response
+
+        save_chat_history(file_path, f"Interaction {i+1}: {next_response}")  # Save each interaction
+
+    # Finalize the discussion
+    save_chat_history(file_path, f"Final Discussion for Question ID: {question_id}\n{discussion_text}")
+    save_chat_history(file_path, f"-" * 60)
+
+    print(discussion_text)
+    print(f"-" * 60)
+
 
 
 def save_chat_history(file_path, message):
@@ -244,11 +274,11 @@ def save_chat_history_pdf(file_path, messages):
 
 
 def main():
-    practice_chat_history_path = "01-02-03-practice_chat_history.txt"
+    practice_chat_history_path = "01-02-03-04-05-practice_chat_history.txt"
     exam_chat_history_path = "exam_chat_history.txt"
-    api_exam_results_path = "01-02-03-04-api_exam_results.txt"
-    pdf_exam_results_path = "01-02-03-pdf_exam_results.txt"
-    quality_chat_history_path = "01-02-quality_conversation.txt"
+    api_exam_results_path = "01-02-03-04-05-api_exam_results.txt"
+    pdf_exam_results_path = "01-02-03-04-05-pdf_exam_results.txt"
+    quality_chat_history_path = "01-02-04-05-quality_conversation.txt"
 
     faiss_index = load_faiss_index(DB_FAISS_PATH)
 
@@ -257,7 +287,7 @@ def main():
     api_practice_start_time = time.time()
     for practice_question_id in range(1, 490):  # Assuming these are placeholder values
         question = fetch_question_from_api(practice_question_id)
-        agent_interaction(question, practice_chat_history_path, model, lcpp_llm, None, practice_question_id)
+        agent_interaction(question, practice_chat_history_path, model, None, practice_question_id)
         print(f"Completed practice question ID: {practice_question_id}")
         print("-" * 30)
     api_practice_end_time = time.time()
@@ -276,14 +306,14 @@ def main():
     with open(api_exam_results_path, "a", encoding="utf-8") as file:
         file.write(f"Total Exam Time: {api_exam_end_time - api_exam_start_time} seconds\n")
 
-    # Practice phase for PDF data
+        # Practice phase for PDF data
     print("Starting practice phase for PDF data...")
     pdf_practice_start_time = time.time()
-    for _ in range(30):
-        pdf_text = random.choice(pdf_texts)
-        agent1_prompt = f"Discussion based on PDF content: {pdf_text[:100]}..."  # Shorten for brevity
-        agent1_response = generate_response_pdf(agent1_prompt)
-        save_chat_history_pdf(quality_chat_history_path, [agent1_prompt, agent1_response, "-" * 60])
+    for practice_question_id in range(1, 50):
+        question = fetch_question_from_api(practice_question_id)
+        agent_interaction_PDF(question, quality_chat_history_path, model, pdf_index, practice_question_id)
+        print(f"Completed practice question ID: {practice_question_id}")
+        print("-" * 30)
     pdf_practice_end_time = time.time()
     with open(quality_chat_history_path, "a", encoding="utf-8") as file:
         file.write(f"Total Practice Phase Time for PDF: {pdf_practice_end_time - pdf_practice_start_time} seconds\n")
@@ -293,7 +323,7 @@ def main():
     pdf_exam_start_time = time.time()
     for question in exam_questions:
         agent_interaction(question, pdf_exam_results_path, model, pdf_index,
-                          question['ID'])  # Note the use of pdf_index if relevant
+                          question['ID'])
     pdf_exam_end_time = time.time()
     with open(pdf_exam_results_path, "a", encoding="utf-8") as file:
         file.write(f"Total Exam Time for PDF: {pdf_exam_end_time - pdf_exam_start_time} seconds\n")
