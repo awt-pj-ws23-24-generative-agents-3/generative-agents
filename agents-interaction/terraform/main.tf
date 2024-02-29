@@ -130,7 +130,7 @@ resource "terraform_data" "retrieve_results" {
 
 resource "terraform_data" "retrieve_chat_history" {
   provisioner "local-exec" {
-    command    = "mkdir -p ./chat-history && scp -o StrictHostKeyChecking=no -i ${aws_key_pair.deployer.key_name}.pem admin@${aws_instance.generative_agents.public_ip}:'~/chat-history/usr/src/app/*' ./chat-history"
+    command    = "mkdir -p ./chat-history && scp -o StrictHostKeyChecking=no -i ${aws_key_pair.deployer.key_name}.pem admin@${aws_instance.generative_agents.public_ip}:'~/chat-history/usr/src/app/*' ../../results"
   }
   depends_on = [terraform_data.retrieve_results]
 }
